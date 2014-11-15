@@ -32,6 +32,14 @@ function bindInfoWindow(marker, map, infowindow, html) {
   });
 }
 
+function closeInfoWindow(infoWindow){
+  google.maps.event.addListener(infoWindow, 'closeclick', function(){
+     infoWindow.close();
+     $('.guide').removeClass('show');
+     $('#map-canvas').removeClass('minimize');
+  });
+}
+
 function pinMap(){
   $.get( "pins.json", function( data ) {
     for (var key in data) {
@@ -40,6 +48,8 @@ function pinMap(){
       var infowindow = new google.maps.InfoWindow({
           content: element.infowindow
       });
+
+      closeInfoWindow(infowindow);
 
       var marker = new Marker(element.name, element.lat, element.lon, window.map);
       bindInfoWindow(marker, window.map, infowindow, element.infowindow);
