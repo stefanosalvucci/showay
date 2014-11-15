@@ -1,8 +1,10 @@
 var Marker = function(name, lat, Lng, map){
+  var image = 'assets/icn_marker.png';
   var marker = new google.maps.Marker({
       position: new google.maps.LatLng(lat, Lng),
       map: map,
-      title: name
+      title: name,
+      icon: image
   });
   return marker;
 };

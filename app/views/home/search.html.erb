@@ -1,14 +1,30 @@
 <div class="search-page">
 
   <div class="guide" id="user_layout">
-
   </div>
 
   <div class="filters">
-    <label>
-      Roma
-    </label>
+    <h1>
+      Filtri
+    </h1>
+
     <form>
+
+      <input type="text" id="datepicker"></p>
+
+      <select>
+        <option value="Culture and History Tours">Culture and History Tours</option>
+        <option value="Driving Experiences">Driving Experiences</option>
+        <option value="Excursions">Excursions</option>
+        <option value="Food">Food</option>
+        <option value="Nature and Adventure Tours">Nature and Adventure Tours</option>
+        <option value="Nightlife">Nightlife<option>
+        <option value="Sightseeing Tours">Sightseeing Tours</option>
+        <option value="Theme Tours">Theme Tours</option>
+        <option value="Tickets">Tickets</option>
+      </select>
+
+      <input type="submit">
 
     </form>
 
@@ -31,6 +47,10 @@
       console.log(place.geometry.location);
       window.map.setCenter(place.geometry.location);
 
+  });
+
+  $(function() {
+    $( "#datepicker" ).datepicker();
   });
 
 </script>
