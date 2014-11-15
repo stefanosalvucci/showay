@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACx0a1qYUvYcAUjRgv3rJCyHS8K4O0c-M">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACx0a1qYUvYcAUjRgv3rJCyHS8K4O0c-M&libraries=places">
     </script>
     <script type="text/javascript">
       function initialize() {
@@ -25,21 +25,12 @@
 <div class="header">
     <div class="left-side">
       <a href="">Qui ci va il logo</a>
+      <input type="text" id="location-autosuggest">
     </div>
     <div class="right-side">
-
-        <nav class="navbar navbar-default" role="navigation">
-            <ul class="nav navbar-nav" >
-                <li ng-class="{ active:tab.isSelected(1) }">
-                    <a href="/search" >Search</a>
-                </li>
-                <li ng-class="{ active:tab.isSelected(2) }">
-                    <a href="/offer">Offer</a>
-                </li>
-
-            </ul>
-        </nav>
-      </div>
+      <a type="button" class="btn btn-default" href="/search">search</a>
+      <a type="button" class="btn btn-default" href="/offer">offer</a>
+    </div>
   </div>
 
   <%= yield %>

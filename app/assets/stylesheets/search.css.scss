@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#map-canvas{
+.search-page{
+  float: left;
   width: 100%;
+  height: 500px;
+  #map-canvas{
+    width: 75%;
+  }
+
+  .filters{
+    width: 25%;
+  }
+
+}
+
+
+select{
+  width:100px;
 }

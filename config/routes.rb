@@ -4,11 +4,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#search'
+  get '/search' => 'home#search'
+  get '/offer' => 'home#offer'
 
-  namespace 'home' do
-    get :search
-    get :offer
-  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
