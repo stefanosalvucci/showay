@@ -5,6 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACx0a1qYUvYcAUjRgv3rJCyHS8K4O0c-M">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: -34.397, lng: 150.644},
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 <body ng-app="modTabs" ng-controller="tabController as tab">
 
@@ -17,22 +31,16 @@
         <nav class="navbar navbar-default" role="navigation">
             <ul class="nav navbar-nav" >
                 <li ng-class="{ active:tab.isSelected(1) }">
-                    <a href ng-click="tab.selectTab(1)">Search</a>
+                    <a href="/search" >Search</a>
                 </li>
                 <li ng-class="{ active:tab.isSelected(2) }">
-                    <a href ng-click="tab.selectTab(2)">Offer</a>
+                    <a href="/offer">Offer</a>
                 </li>
 
             </ul>
         </nav>
-
-
-    </div>
-</div>
-
-        <search    ng-show="tab.isSelected(1)"></search>
-
-        <offer   ng-show="tab.isSelected(2)"></offer>
+      </div>
+  </div>
 
   <%= yield %>
 
