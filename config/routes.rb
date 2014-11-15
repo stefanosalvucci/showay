@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/jquery/icons/stars.png' => 'home#stars_png'
   get '/jquery/icons/small.png' => 'home#small_png'
-
+  get '/assets/assets/ui-bg_highlight-soft_100_eeeeee_1x100.png' => 'home#hightlight_soft'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

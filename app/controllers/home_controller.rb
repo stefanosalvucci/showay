@@ -108,4 +108,8 @@ class HomeController < ApplicationController
   def small_png
     send_file "#{Rails.root}/app/assets/images/small.png", type: 'image/png', disposition: 'inline'
   end
+
+  def hightlight_soft
+    send_file "#{Rails.root}/app/assets/images/ui-bg_highlight-soft_100_eeeeee_1x100.png", type: 'image/png', disposition: 'inline'
+  end
 end
