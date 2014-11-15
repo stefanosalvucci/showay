@@ -15,14 +15,32 @@ function initialize() {
     zoom: 15
   };
   window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-  var marker = new Marker('Colosseo', 41.890374, 12.492188, window.map);
 };
+
+function bindInfoWindow(marker, map, infowindow, html) {
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(html);
+        infowindow.open(map, marker);
+    });
+  }
+
 
 $(document).ready(function(){
 
   google.maps.event.addDomListener(window, 'load', initialize);
+  $.get( "pins.json", function( data ) {
+    for (var key in data) {
+      var element = data[key];
 
+      var infowindow = new google.maps.InfoWindow({
+          content: element.infowindow
+      });
+
+      var marker = new Marker(element.name, element.lat, element.lon, window.map);
+      bindInfoWindow(marker, window.map, infowindow, element.infowindow);
+
+    }
+  });
 });
 
 

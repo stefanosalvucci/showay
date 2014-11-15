@@ -37,12 +37,13 @@ class HomeController < ApplicationController
       surname: random_surname,
       text: random_text,
       rating: random_rating,
+      infowindow: "<div>ciao</div>",
       rating_count: random_rating_count
     }
   end
 
   def random_distance
-    (rand / 50) * ([1,-1].sample)
+    (rand / 10) * ([1,-1].sample)
   end
 
   def random_name
