@@ -4,16 +4,11 @@ class HomeController < ApplicationController
   def index
   end
 
-  def home
+  def search
     render layout: false
   end
 
-  def contact
+  def offer
     render layout: false
   end
-
-  def about
-    render layout: false
-  end
-
 end

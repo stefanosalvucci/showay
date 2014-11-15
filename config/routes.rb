@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :home do
-    get :about
-    get :home
-    get :contact
+    get :search
+    get :offer
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

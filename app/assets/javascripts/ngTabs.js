@@ -15,22 +15,16 @@
   });
 
   /**************** TAB ********************/
-  modTabs.directive('home', function(){
+  modTabs.directive('search', function(){
     return {
       restrict    : 'E',
-      templateUrl : '/home/home.html',
+      templateUrl : '/home/search.html',
     }
   });
-  modTabs.directive('about', function(){
+  modTabs.directive('offer', function(){
     return {
       restrict    : 'E',
-      templateUrl : '/home/about.html',
-    }
-  });
-  modTabs.directive('contact', function(){
-    return {
-      restrict    : 'E',
-      templateUrl : '/home/contact.html',
+      templateUrl : '/home/offer.html',
     }
   });
 

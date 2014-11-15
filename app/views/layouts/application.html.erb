@@ -6,60 +6,34 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="modTabs">
-  <div class="header">
+<body ng-app="modTabs" ng-controller="tabController as tab">
+
+<div class="header">
     <div class="left-side">
-      <a href="">dasd</a>
+      <a href="">Qui ci va il logo</a>
     </div>
     <div class="right-side">
 
-
-      <section ng-controller="tabController as tab">
-        <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                    <a class="navbar-brand" href="/app/views/home/about.html.erb">Showay</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav" >
-                        <li ng-class="{ active:tab.isSelected(1) }">
-                            <a href ng-click="tab.selectTab(1)">Home</a>
-                        </li>
-                        <li ng-class="{ active:tab.isSelected(2) }">
-                            <a href ng-click="tab.selectTab(2)">About</a>
-                        </li>
-                        <li ng-class="{ active:tab.isSelected(3) }">
-                            <a href ng-click="tab.selectTab(3)">Contact</a>
-                        </li>
-            </button>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
+            <ul class="nav navbar-nav" >
+                <li ng-class="{ active:tab.isSelected(1) }">
+                    <a href ng-click="tab.selectTab(1)">Search</a>
+                </li>
+                <li ng-class="{ active:tab.isSelected(2) }">
+                    <a href ng-click="tab.selectTab(2)">Offer</a>
+                </li>
+
+            </ul>
         </nav>
-
-        <home    ng-show="tab.isSelected(1)"></home>
-
-        <about   ng-show="tab.isSelected(2)"></about>
-
-        <contact ng-show="tab.isSelected(3)"></contact>
-
-    </section>
 
 
     </div>
-  </div>
+</div>
+
+        <search    ng-show="tab.isSelected(1)"></search>
+
+        <offer   ng-show="tab.isSelected(2)"></offer>
+
   <%= yield %>
 
 </body>
