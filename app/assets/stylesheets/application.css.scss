@@ -19,6 +19,7 @@ html, body, #map-canvas {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .header{
@@ -51,4 +52,9 @@ html, body, #map-canvas {
   &:hover{
     color: #00ae47;
   }
+}
+
+img.logo {
+  z-index: 1;
+  position: relative;
 }

@@ -37,7 +37,7 @@ class HomeController < ApplicationController
       surname: random_surname,
       text: random_text,
       rating: random_rating,
-      infowindow: "<div>ciao</div>",
+      infowindow: "<div>Hello!</div>",
       rating_count: random_rating_count
     }
   end

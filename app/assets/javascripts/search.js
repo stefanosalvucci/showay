@@ -21,18 +21,18 @@ function bindInfoWindow(marker, map, infowindow, html) {
   google.maps.event.addListener(marker, 'click', function() {
     if (window.openedInfowindow != null) {
       window.openedInfowindow.close();
+      $('.guide').removeClass('show');
     }
     infowindow.setContent(html);
     infowindow.open(map, marker);
+    $('.guide').addClass('show');
+    $('#map-canvas').addClass('minimize');
     map.setCenter(marker.position);
     window.openedInfowindow = infowindow;
   });
 }
 
-
-$(document).ready(function(){
-
-  google.maps.event.addDomListener(window, 'load', initialize);
+function pinMap(){
   $.get( "pins.json", function( data ) {
     for (var key in data) {
       var element = data[key];
@@ -46,6 +46,18 @@ $(document).ready(function(){
 
     }
   });
+}
+
+
+$(document).ready(function(){
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+  pinMap();
+
+ // $('form').submit(function(data){
+
+  //});
 });
 
 

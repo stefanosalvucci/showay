@@ -6,15 +6,36 @@
   float: left;
   width: 100%;
   height: 100%;
+  margin-top: -18px;
+  .guide{
+    width: 0px;
+    height: 100%;
+    float: left;
+    background-color: green;
+    &.show{
+      width: 20%;
+    }
+  }
+
   #map-canvas{
-    width: 75%;
+    width: 80%;
+    float: left;
+    &.minimize{
+      width: 60%;
+      float: left;
+    }
   }
 
   .filters{
-    width: 25%;
+    background-color: red;
+    width: 20%;
+    height: 100%;
+    float: right;
   }
 
 }
+
+
 
 
 select{
