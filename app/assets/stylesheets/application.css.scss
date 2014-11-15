@@ -24,13 +24,31 @@ html, body, #map-canvas {
 .header{
   width: 100%;
   height: 60px;
-  background-color: black;
+  background-color: #dfdfdf;
 
   .left-side{
     float: left;
+    #location-autosuggest{
+      background-color: #dfdfdf;
+      border: none;
+    }
   }
 
   .right-side{
     float: right;
+    .last{
+      padding-right: 30px;
+    }
+  }
+}
+
+.btn-header{
+  background-color: #dfdfdf;
+  border-color: #dfdfdf;
+  text-transform: uppercase;
+  color: black;
+  padding-top: 19px;
+  &:hover{
+    color: #00ae47;
   }
 }
