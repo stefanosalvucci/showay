@@ -6,9 +6,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
+<body ng-app>
+  <div class="header">
+    <div class="left-side">
+      <a href=""></a>
+    </div>
+    <div class="right-side">
+      <button type="button" class="btn btn-primary">ciao</button>
+    </div>
+  </div>
+  <%= yield %>
 
 </body>
 </html>
