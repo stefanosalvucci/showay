@@ -11,7 +11,32 @@
     width: 0px;
     height: 100%;
     float: left;
-    background-color: green;
+    background-color: white;
+    .guide-top{
+     height: 110px;
+    }
+    .user_desc{
+      padding-top: 40px;
+      font-size: 14px;
+      small{
+        font-size: 10px;
+      }
+    }
+    .description{
+      margin: 10px;
+      font-size: 12px;
+    }
+    .user_picture{
+      width: 100px;
+      background-color: white;
+      float: left;
+      overflow: hidden;
+      margin: 20px 10px;
+      img{
+          display: block;
+          width: 100px;
+      }
+    }
     &.show{
       width: 20%;
     }

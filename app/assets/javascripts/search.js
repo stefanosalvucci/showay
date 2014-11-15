@@ -23,10 +23,15 @@ function bindInfoWindow(marker, map, infowindow, html) {
       window.openedInfowindow.close();
       $('.guide').removeClass('show');
     }
-    infowindow.setContent(html);
+    infowindow.setContent('close');
     infowindow.open(map, marker);
     $('.guide').addClass('show');
     $('#map-canvas').addClass('minimize');
+    $('#user_layout').html(html);
+    $(".rating-value").jRating({
+      isDisabled : true,
+      type: 'small'
+    });
     map.setCenter(marker.position);
     window.openedInfowindow = infowindow;
   });
