@@ -12,17 +12,22 @@ function initialize() {
   var myLatlng = new google.maps.LatLng(41.890374, 12.492188);
   var mapOptions = {
     center: myLatlng,
-    zoom: 15
+    zoom: 12
   };
   window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 };
 
 function bindInfoWindow(marker, map, infowindow, html) {
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(html);
-        infowindow.open(map, marker);
-    });
-  }
+  google.maps.event.addListener(marker, 'click', function() {
+    if (window.openedInfowindow != null) {
+      window.openedInfowindow.close();
+    }
+    infowindow.setContent(html);
+    infowindow.open(map, marker);
+    map.setCenter(marker.position);
+    window.openedInfowindow = infowindow;
+  });
+}
 
 
 $(document).ready(function(){

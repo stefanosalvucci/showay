@@ -13,7 +13,8 @@
   var placeAutocomplete = new google.maps.places.Autocomplete(placeInput[0], options);
   google.maps.event.addListener(placeAutocomplete, 'place_changed', function() {
       var place = placeAutocomplete.getPlace();
-      console.log( $('#map-canvas'));
+      console.log(place.geometry.location);
+      window.map.setCenter(place.geometry.location);
 
   });
 
