@@ -9,14 +9,12 @@
     types: ['(cities)'],
   };
 
-  var $placeInput = $('#location-autosuggest');
-  var placeAutocomplete = new google.maps.places.Autocomplete($placeInput[0], options);
+  var placeInput = $('#location-autosuggest');
+  var placeAutocomplete = new google.maps.places.Autocomplete(placeInput[0], options);
   google.maps.event.addListener(placeAutocomplete, 'place_changed', function() {
-      console.log('dajed')
-      var place = placeAutocomplete.getPlace()
-      if (place.formatted_address != $placeInput.val()) {
-        $placeInput.val(place.formatted_address);
-      }
+      var place = placeAutocomplete.getPlace();
+      console.log( $('#map-canvas'));
+
   });
 
 </script>
