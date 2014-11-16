@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$secSlide: 0.5s;
+
 h1{
   text-align: center;
   margin-bottom: 20px;
@@ -31,11 +33,21 @@ input[type="submit"]{
   margin-top: -18px;
 
   .guide{
-    width: 0px;
+    width: 20%;
+    margin-left: -20%;
     height: 100%;
     float: left;
     overflow: hidden;
     background-color: white;
+
+    &.show{
+      margin-left: 0%;
+      -webkit-transition-property: margin-left; /* Safari */
+      -webkit-transition-duration: $secSlide; /* Safari */
+      transition-property: margin-left;
+      transition-duration: $secSlide;
+    }
+
     .guide-top{
      height: 110px;
     }
@@ -83,9 +95,6 @@ input[type="submit"]{
           width: 100px;
       }
     }
-    &.show{
-      width: 20%;
-    }
   }
 
   #map-canvas{
@@ -95,6 +104,10 @@ input[type="submit"]{
     &.minimize{
       width: 60%;
       float: left;
+      -webkit-transition-property: width; /* Safari */
+      -webkit-transition-duration: $secSlide; /* Safari */
+      transition-property: width;
+      transition-duration: $secSlide;
     }
   }
 

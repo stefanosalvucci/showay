@@ -5,7 +5,6 @@
 
   <div class="filters">
     <h1>
-      Filtri
     </h1>
 
     <form>
@@ -44,13 +43,13 @@
   var placeAutocomplete = new google.maps.places.Autocomplete(placeInput[0], options);
   google.maps.event.addListener(placeAutocomplete, 'place_changed', function() {
       var place = placeAutocomplete.getPlace();
-      console.log(place.geometry.location);
       window.map.setCenter(place.geometry.location);
-
+      console.log(place);
+      $('h1').text(place.name);
   });
 
   $(function() {
-    //$( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker();
   });
 
 </script>

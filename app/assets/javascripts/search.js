@@ -17,6 +17,7 @@ function initialize() {
     zoom: 12
   };
   window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  pinMap();
 };
 
 function bindInfoWindow(marker, map, infowindow, html) {
@@ -71,13 +72,7 @@ function pinMap(){
 
 $(document).ready(function(){
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+  initialize();
 
-  pinMap();
-
- // $('form').submit(function(data){
-
-  //});
 });
-
 
