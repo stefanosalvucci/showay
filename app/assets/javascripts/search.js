@@ -17,7 +17,7 @@ function initialize() {
     zoom: 12
   };
   window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  pinMap();
+  pinMap(window.map);
 };
 
 function bindInfoWindow(marker, map, infowindow, html) {
@@ -51,7 +51,7 @@ function closeInfoWindow(infoWindow){
   });
 }
 
-function pinMap(){
+function pinMap(map){
   $.get( "pins.json", function( data ) {
     for (var key in data) {
       var element = data[key];
@@ -62,8 +62,8 @@ function pinMap(){
 
       closeInfoWindow(infowindow);
 
-      var marker = new Marker(element.name, element.lat, element.lon, window.map);
-      bindInfoWindow(marker, window.map, infowindow, element.infowindow);
+      var marker = new Marker(element.name, element.lat, element.lon, map);
+      bindInfoWindow(marker, map, infowindow, element.infowindow);
 
     }
   });

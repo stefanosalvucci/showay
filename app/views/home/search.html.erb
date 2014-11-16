@@ -17,7 +17,7 @@
         <option value="Excursions">Excursions</option>
         <option value="Food">Food</option>
         <option value="Nature and Adventure Tours">Nature and Adventure Tours</option>
-        <option value="Nightlife">Nightlife<option>
+        <option value="Nightlife">Nightlife</option>
         <option value="Sightseeing Tours">Sightseeing Tours</option>
         <option value="Theme Tours">Theme Tours</option>
         <option value="Tickets">Tickets</option>
@@ -44,7 +44,6 @@
   google.maps.event.addListener(placeAutocomplete, 'place_changed', function() {
       var place = placeAutocomplete.getPlace();
       window.map.setCenter(place.geometry.location);
-      console.log(place);
       $('h1').text(place.name);
   });
 
