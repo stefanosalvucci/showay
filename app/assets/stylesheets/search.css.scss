@@ -84,6 +84,13 @@ input[type="submit"]{
         height: 20px;
       }
     }
+    .book{
+      background-color: #00ae47;
+      border: none;
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+    }
     .user_picture{
       width: 100px;
       background-color: white;
@@ -116,6 +123,39 @@ input[type="submit"]{
     height: 100%;
     float: right;
     padding: 5px;
+    .form{
+      height: 290px;
+    }
+    .last-offer{
+      height: 290px;
+      .last-minute-el{
+        margin: 10px;
+      }
+      h5{
+        text-align: center;
+      }
+      img{
+          display: block;
+          width: 60px;
+          border-radius: 60px;
+      }
+      table{
+        width: 100%;
+        .last-offer-desc{
+          font-size: 12px;
+        }
+        .last-offer-price{
+          color: green;
+          margin-right: 5px;
+          font-size: 12px;
+        }
+        .discount{
+          color: red;
+          font-size: 9px;
+          margin-right: 15px;
+        }
+      }
+    }
   }
 
 }

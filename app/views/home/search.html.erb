@@ -4,29 +4,50 @@
   </div>
 
   <div class="filters">
-    <h1>
-    </h1>
+    <div class='form'>
+      <form>
 
-    <form>
+        <input type="text" id="datepicker"></p>
 
-      <input type="text" id="datepicker"></p>
+        <select>
+          <option value="Culture and History Tours">Culture and History Tours</option>
+          <option value="Driving Experiences">Driving Experiences</option>
+          <option value="Excursions">Excursions</option>
+          <option value="Food">Food</option>
+          <option value="Nature and Adventure Tours">Nature and Adventure Tours</option>
+          <option value="Nightlife">Nightlife</option>
+          <option value="Sightseeing Tours">Sightseeing Tours</option>
+          <option value="Theme Tours">Theme Tours</option>
+          <option value="Tickets">Tickets</option>
+        </select>
 
-      <select>
-        <option value="Culture and History Tours">Culture and History Tours</option>
-        <option value="Driving Experiences">Driving Experiences</option>
-        <option value="Excursions">Excursions</option>
-        <option value="Food">Food</option>
-        <option value="Nature and Adventure Tours">Nature and Adventure Tours</option>
-        <option value="Nightlife">Nightlife</option>
-        <option value="Sightseeing Tours">Sightseeing Tours</option>
-        <option value="Theme Tours">Theme Tours</option>
-        <option value="Tickets">Tickets</option>
-      </select>
+        <input type="submit">
 
-      <input type="submit">
-
-    </form>
-
+      </form>
+    </div>
+    <hr>
+    <div class='last-offer'>
+      <h5>Last Minute</h5>
+      <% @last_minute.each do |lm| %>
+        <div class="last-minute-el">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                <img src="<%= lm[:img] %>">
+                </td>
+                <td>
+                  <a><span class='last-offer-desc'><%= lm[:description] %></span></a>
+                </td>
+                <td align="right">
+                  <span class='last-offer-price'><%= lm[:price] %></span><span class='discount'>(-<%= [23,30,20,15].sample %>%)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <% end %>
+    </div>
   </div>
 
   <div id="map-canvas" class="map"></div>

@@ -2,6 +2,28 @@ class HomeController < ApplicationController
   layout 'application'
 
   def search
+    @last_minute =[
+      {
+        img: 'http://www.donnamoderna.com/var/ezflow_site/storage/images/media/images/succede/alberto-sordi/alberto-sordi-sordi01/762215-1-ita-IT/alberto-sordi-sordi01_s_sonOr.jpg',
+        description:'Food Tour',
+        price: '20€'
+      },
+      {
+        img: 'http://riccardos.com/images/uploads/SaturdayNightFever.jpg',
+        description:'Disco Tour',
+        price: '23€'
+      },
+      {
+        img: 'http://www.iconsdb.com/icons/preview/orange/beer-xxl.png',
+        description:'Best Pubs',
+        price: '14€'
+      },
+      {
+        img: 'http://www.younoodlecamp.com/wp-content/uploads/2013/04/startups_icon.png',
+        description: 'Visit Startups',
+        price: '2€'
+      }
+    ]
   end
 
   def offer
@@ -171,7 +193,7 @@ class HomeController < ApplicationController
       </div>
       <hr>
       <div class='buttons'>
-        <button class='button btn-button' href=''>Prenota</button>
+        <button class='button btn-button book' href=''>BOOK</button>
       </div>"
   end
 
