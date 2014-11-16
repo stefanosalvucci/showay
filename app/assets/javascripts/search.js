@@ -61,10 +61,15 @@ function pinMap(map){
       });
 
       closeInfoWindow(infowindow);
-
-      var marker = new Marker(element.name, element.lat, element.lon, map);
-      bindInfoWindow(marker, map, infowindow, element.infowindow);
-
+      if(rating = getUrlParameter('min-rating')){
+        if (element.rating > rating){
+          var marker = new Marker(element.name, element.lat, element.lon, map);
+          bindInfoWindow(marker, map, infowindow, element.infowindow);
+        }
+      } else{
+        var marker = new Marker(element.name, element.lat, element.lon, map);
+        bindInfoWindow(marker, map, infowindow, element.infowindow);
+      }
     }
   });
 }
@@ -99,3 +104,17 @@ $( "select" ).change(function() {
 
 });
 
+
+function getUrlParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}  
