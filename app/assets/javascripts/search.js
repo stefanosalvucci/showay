@@ -74,5 +74,11 @@ $(document).ready(function(){
 
   initialize();
 
+  $(".min-rating").jRating({
+    sendRequest : false,
+    showRateInfo:false,
+  });
+
+
 });
 

@@ -5,11 +5,12 @@
 
   <div class="filters">
     <div class='form'>
-      <h5>Filters</h5>
+      <h5>Filters</h5><br>
       <form>
 
-        <input type="text" id="datepicker"></p>
-
+        <span class='datelabel'>When:</span><input type="text" id="datepicker">
+        <div class="clearfix"></div><br>
+        <span class='datelabel'>Category:</span>
         <select>
           <option value="Culture and History Tours">Culture and History Tours</option>
           <option value="Driving Experiences">Driving Experiences</option>
@@ -22,6 +23,10 @@
           <option value="Tickets">Tickets</option>
         </select>
 
+        <div class="clearfix"></div><br>
+        <span class='datelabel'>Minimum:</span>
+        <div class="min-rating" data-average="10"></div>
+        <div class="clearfix"></div><br>
         <input type="submit">
 
       </form>
