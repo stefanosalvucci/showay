@@ -69,7 +69,6 @@ function pinMap(map){
   });
 }
 
-
 $(document).ready(function(){
 
   initialize();
@@ -79,6 +78,23 @@ $(document).ready(function(){
     showRateInfo:false,
   });
 
+$( "select" ).change(function() {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( "#select-field" ).text( str );
+  });
+
+  $('#update-submit').click(function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    var params = {};
+    params['date'] = $('#datepicker-field').val();
+    params['min-rating'] = parseInt($('.jRatingAverage').width() / 25);
+    params['category'] = $( "#select-field" ).text();
+    console.log(params);
+  });
 
 });
 

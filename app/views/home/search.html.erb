@@ -6,9 +6,10 @@
   <div class="filters">
     <div class='form'>
       <h5>Filters</h5><br>
-      <form>
+      <form id="update-form">
 
         <span class='datelabel'>When:</span><input type="text" id="datepicker">
+        <input type="hidden" id="datepicker-field">
         <div class="clearfix"></div><br>
         <span class='datelabel'>Category:</span>
         <select>
@@ -22,12 +23,13 @@
           <option value="Theme Tours">Theme Tours</option>
           <option value="Tickets">Tickets</option>
         </select>
+        <input type="hidden" id="select-field">
 
         <div class="clearfix"></div><br>
         <span class='datelabel'>Minimum:</span>
         <div class="min-rating" data-average="0"></div>
         <div class="clearfix"></div><br>
-        <input class="submit" type="submit" value="UPDATE">
+        <input id="update-submit" class="submit" type="submit" value="UPDATE">
 
       </form>
     </div>
@@ -75,7 +77,9 @@
   });
 
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({
+      altField : '#datepicker-field'
+      });
   });
 
 </script>
