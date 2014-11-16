@@ -93,6 +93,7 @@ $( "select" ).change(function() {
     params['date'] = $('#datepicker-field').val();
     params['min-rating'] = parseInt($('.jRatingAverage').width() / 25);
     params['category'] = $( "#select-field" ).text();
+    window.location = location.protocol + '//' + location.host + location.pathname + '?' + $.param(params)
     console.log(params);
   });
 
