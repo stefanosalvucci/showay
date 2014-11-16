@@ -34,6 +34,7 @@ input[type="submit"]{
     width: 0px;
     height: 100%;
     float: left;
+    overflow: hidden;
     background-color: white;
     .guide-top{
      height: 110px;
@@ -48,6 +49,28 @@ input[type="submit"]{
     .description{
       margin: 10px;
       font-size: 12px;
+      height: 60px;
+    }
+    .skills{
+      text-align: center;
+      .rating-value-big{
+        margin: auto;
+      }
+    }
+    .reviews{
+      font-size: 12px;
+      margin: 10px;
+      img{
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+      }
+      table{
+        width: 100%;
+      }
+      .separator{
+        height: 20px;
+      }
     }
     .user_picture{
       width: 100px;

@@ -34,6 +34,9 @@ function bindInfoWindow(marker, map, infowindow, html) {
       isDisabled : true,
       type: 'small'
     });
+    $(".rating-value-big").jRating({
+      isDisabled : true,
+    });
     map.setCenter(marker.position);
     window.openedInfowindow = infowindow;
   });

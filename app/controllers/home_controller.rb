@@ -36,6 +36,13 @@ class HomeController < ApplicationController
       name: random_name,
       surname: random_surname,
       text: random_text,
+      accuracy: rand(5) + 1,
+      experience: rand(5) + 1,
+      reliability: rand(5) + 1,
+      review_1: random_review_1,
+      review_1_pic: random_review_pic,
+      review_2: random_review_2,
+      review_2_pic: random_review_pic,
       rating: random_rating,
       rating_count: random_rating_count,
       user_picture: "http://www.ligurianotizie.it/wp-content/uploads/2014/06/massimo-ferrero.gif"
@@ -65,11 +72,37 @@ class HomeController < ApplicationController
     rand 150
   end
 
+  def random_review_1
+    [
+      'Had such a great experience!',
+      'Super sweet guy, a beautiful tour.'
+    ].sample
+  end
+
+  def random_review_2
+    [
+      'Defenetely Recommended. +++',
+      'I have nice memories.'
+    ].sample
+  end
+
+  def random_review_pic
+    %w"
+    http://ashleybodi.com/wp-content/uploads/2010/06/angry-person-istock.jpg
+    http://www.theedgesusu.co.uk/wp-content/uploads/2013/05/350634_0_lucy-porter-people-person_400-250x250.jpg
+    http://ris.fashion.telegraph.co.uk/RichImageService.svc/imagecontent/1/TMG9044583/m/Kate-hat_2121801a.jpg
+    http://guidetowomen.files.wordpress.com/2011/02/hear-no-evil-person-with-hands-over-ears.jpg
+    http://democratici-digitali.com/sites/default/files/images2/alfio-marchini.jpg
+    http://media.melty.it/article-2626566-square_300-f1409563835/massimo-ferrero-presidente-sampdoria.jpg
+    http://zonanapoli.altervista.org/blog/wp-content/uploads/2014/10/ferrero-bruciato.jpg
+    ".sample
+  end
+
   def random_text
     [
       "Food Tour around the best restaurant of the city. I'm a really social guy, it will be a great thing to do!",
-      "Driving Tour and Vintage Shops: these are my biggest passions, I'll be really glad to share my favourite places with you.",
-      "Wanna go to disco? Wanna have fun with a crazy guy?. Book me, I'll be your Cicerone.",
+      "Driving Tour and Vintage Shops: these are my biggest passions, I'll be really glad to share my favorite places with you.",
+      "Wanna go to disco? Wanna have fun with a crazy guy? Book me, I'll be your Cicerone.",
       "Gardens Private Small-Group Walking Tour: want to relax with a zen enviromnent and escape from the chaos of this city? Join me and my zen culture.",
       "5-Hour Private Cooking Class: I'm from Italy, you'll not be dissappointed of my recipes :)",
       "2-Hour Ghost Walk and Paranormal Tour. Truly unbelievable. Everytime I do time I'm scared like the first time. If you like mistery you cannot miss it!",
@@ -95,9 +128,50 @@ class HomeController < ApplicationController
         <p id='description'>#{obj[:text]}</p>
       </div>
       <hr>
+      <div class='skills'>
+        <div class='score-row'>
+          <h5>Accuracy</h5>
+          <div class='rating-value-big' data-average='#{obj[:accuracy] * 4}'>
+        </div>
+        <div class='score-row'>
+          <h5>Experience</h5>
+          <div class='rating-value-big' data-average='#{obj[:experience] * 4}'>
+        </div>
+        <div class='score-row'>
+          <h5>Reliability</h5>
+          <div class='rating-value-big' data-average='#{obj[:reliability] * 4}'>
+        </div>
+      </div>
+      <hr>
+      <div class='reviews'>
+        <h5>Last Reviews</h5>
+        <table>
+          <tr align='center'>
+            <td>
+              <img src='#{obj[:review_1_pic]}'>
+            </td>
+            <td>
+              #{obj[:review_1]}
+            </td>
+          </tr>
+          <tr align='center'>
+            <td>
+              <div class='separator'></div>
+            </td>
+          </tr>
+          <tr align='center'>
+            <td>
+              <img src='#{obj[:review_2_pic]}'>
+            </td>
+            <td>
+              #{obj[:review_2]}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <hr>
       <div class='buttons'>
-        <a href=''>Profilo</a>
-        <a href=''>Paga</a>
+        <button class='button btn-button' href=''>Prenota</button>
       </div>"
   end
 
