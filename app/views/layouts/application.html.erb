@@ -9,16 +9,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
 <div class="header">
     <div class="left-side">
       <a href="/" target="no_follow"><%= image_tag 'showay_full.png', :class=>'logo', height: 78 %></a>
-      <input type="text" id="location-autosuggest">
+      <input type="text" id="location-autosuggest" placeholder="Insert a position">
     </div>
     <div class="right-side">
       <a type="button" class="btn btn-header" href="/search">SEARCH</a>
-      <a type="button" class="btn btn-header last" href="/offer">OFFER</a>
+      <a type="button" class="btn btn-header" href="/team">TEAM</a>
+      <a type="button" class="btn btn-header last" href="/about">ABOUT</a>
     </div>
   </div>
 

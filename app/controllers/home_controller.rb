@@ -26,7 +26,10 @@ class HomeController < ApplicationController
     ]
   end
 
-  def offer
+  def team
+  end
+
+  def about
   end
 
   def pins

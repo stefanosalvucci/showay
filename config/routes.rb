@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/search' => 'home#search'
   get '/offer' => 'home#offer'
   get '/pins' => 'home#pins'
+  get '/team' => 'home#team'
+  get '/about' => 'home#about'
 
   get '/jquery/icons/stars.png' => 'home#stars_png'
   get '/jquery/icons/small.png' => 'home#small_png'
