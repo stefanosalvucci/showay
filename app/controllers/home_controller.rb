@@ -61,6 +61,8 @@ class HomeController < ApplicationController
       accuracy: rand(5) + 1,
       experience: rand(5) + 1,
       reliability: rand(5) + 1,
+      price: rand(20) + 5,
+      duration: rand(3) + 1,
       review_1: random_review_1,
       review_1_pic: random_review_pic,
       review_2: random_review_2,
@@ -192,6 +194,9 @@ class HomeController < ApplicationController
         </table>
       </div>
       <hr>
+      <div class='price'>
+        <span>#{obj[:price]}€</span><span class='duration'> - #{obj[:duration]} #{obj[:duration] > 1 ? 'Hours' : 'Hour'}</span>
+      </div>
       <div class='buttons'>
         <button class='button btn-button book' href=''>BOOK</button>
       </div>"

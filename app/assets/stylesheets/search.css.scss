@@ -84,12 +84,32 @@ input[type="submit"]{
         height: 20px;
       }
     }
+    .price{
+      float: left;
+      font-size: 18px;
+      color: #00ae47;
+      text-align: center;
+      padding-top: 6px;
+      width: 160px;
+    }
+    .duration{
+      font-size: 18px;
+      color: black;
+      text-align: center;
+      padding-top: 6px;
+    }
     .book{
       background-color: #00ae47;
       border: none;
       text-decoration: none;
       color: white;
       padding: 10px 20px;
+      float: right;
+      margin-right: 10px;
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+      }
     }
     .user_picture{
       width: 100px;
